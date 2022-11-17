@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: cirrusci/flutter:latest
-    
     steps:
+    - uses: actions/checkout@v2
     - name: Flutter Pub Get
       run: flutter pub get
       
