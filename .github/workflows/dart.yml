@@ -8,20 +8,18 @@ on:
   workflow_dispatch:
 
 jobs:
-  flutter_devtools:
+  lint_test:
     name: Flutter DevTools
     runs-on: ubuntu-latest
+    container:
+      image: cirrusci/flutter:latest
     
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-java@v1
-      with:
-        java-version: '12.x'
-    - uses: subosito/flutter-action@v2
-      with:
-        flutter-version: '3.3.5'
     - name: Flutter Pub Get
       run: flutter pub get
+      
+    - name: Flutter Generate
+      run: flutter pub run build_runner build --delete-conflicting-outputs
       
     - name: Flutter Generate Translation
       run: flutter gen-l10n
