@@ -4,6 +4,8 @@
 ![LICENSE](https://img.shields.io/hexpm/l/modular)
 [![GitHub stars](https://badgen.net/github/stars/Flutter-DevTools/flutter_devtools)](https://GitHub.com/Flutterando/modular/stargazers/)
 
+[![CI](https://github.com/Flutter-DevTools/flutter_devtools/actions/workflows/dart.yml/badge.svg)](https://github.com/Flutter-DevTools/flutter_devtools/actions/workflows/dart.yml)
+
 This is a tool made for developers and usable on each platform supported by Flutter.
 
 
