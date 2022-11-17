@@ -2,7 +2,7 @@
 
 import 'dart:io';
 
-void main (List<String> arguments) async {
+void main(List<String> arguments) async {
   // Do not execute when merging
   final mergeFile = File('.git/MERGE_HEAD');
   if (await mergeFile.exists()) {
