@@ -1,6 +1,7 @@
 # flutter_devtools
 
 A new Flutter project.
+I test the commit-msg hook
 
 ## Getting Started
 
