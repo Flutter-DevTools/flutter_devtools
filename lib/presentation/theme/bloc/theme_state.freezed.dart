@@ -14,10 +14,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+ThemeState _$ThemeStateFromJson(Map<String, dynamic> json) {
+  return _ThemeState.fromJson(json);
+}
+
 /// @nodoc
 mixin _$ThemeState {
   ThemeMode get selectedThemeMode => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $ThemeStateCopyWith<ThemeState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -90,9 +95,12 @@ class __$$_ThemeStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$_ThemeState extends _ThemeState {
   const _$_ThemeState({required this.selectedThemeMode}) : super._();
+
+  factory _$_ThemeState.fromJson(Map<String, dynamic> json) =>
+      _$$_ThemeStateFromJson(json);
 
   @override
   final ThemeMode selectedThemeMode;
@@ -111,6 +119,7 @@ class _$_ThemeState extends _ThemeState {
                 other.selectedThemeMode == selectedThemeMode));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, selectedThemeMode);
 
@@ -119,12 +128,22 @@ class _$_ThemeState extends _ThemeState {
   @pragma('vm:prefer-inline')
   _$$_ThemeStateCopyWith<_$_ThemeState> get copyWith =>
       __$$_ThemeStateCopyWithImpl<_$_ThemeState>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_ThemeStateToJson(
+      this,
+    );
+  }
 }
 
 abstract class _ThemeState extends ThemeState {
   const factory _ThemeState({required final ThemeMode selectedThemeMode}) =
       _$_ThemeState;
   const _ThemeState._() : super._();
+
+  factory _ThemeState.fromJson(Map<String, dynamic> json) =
+      _$_ThemeState.fromJson;
 
   @override
   ThemeMode get selectedThemeMode;

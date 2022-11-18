@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_devtools/presentation/theme/colors/interfaces/colors_variation_interface.dart';
+import 'package:flutter_devtools/presentation/theme/colors/interfaces/neutral_colors_variation_interface.dart';
 import 'package:flutter_devtools/presentation/theme/colors/interfaces/shimmer_colors_interface.dart';
 
 abstract class AppColorsInterface {
-  static const black = Colors.black;
-  static const white = Colors.white;
-  static const transparent = Colors.transparent;
+  const AppColorsInterface();
 
   Color get background;
 
@@ -15,7 +14,7 @@ abstract class AppColorsInterface {
 
   ColorsVariationInterface get primary;
 
-  ColorsVariationInterface get neutral;
+  NeutralColorsVariationInterface get neutral;
 
   ColorsVariationInterface get success;
 
@@ -24,6 +23,4 @@ abstract class AppColorsInterface {
   ColorsVariationInterface get warning;
 
   ColorsVariationInterface get danger;
-
-  ColorsVariationInterface get text;
 }

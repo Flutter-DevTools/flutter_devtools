@@ -1,12 +1,18 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_devtools/presentation/theme/colors/exceptions/default_color_exception.dart';
+part of '../app_colors.dart';
 
-abstract class ColorsVariationInterface {
+class _LightDangerColorVariations extends ColorsVariationInterface {
+  @override
   Color get v160 => throw DefaultColorException();
+  @override
   Color get v140 => throw DefaultColorException();
+  @override
   Color get v120 => throw DefaultColorException();
+  @override
   Color get v100 => throw DefaultColorException();
+  @override
   Color get v80 => throw DefaultColorException();
+  @override
   Color get v60 => throw DefaultColorException();
+  @override
   Color get v40 => throw DefaultColorException();
 }
