@@ -4,7 +4,7 @@ class _LightAppColors extends AppColorsInterface {
   const _LightAppColors();
 
   @override
-  Color get background => throw UnimplementedError();
+  Color get background => Colors.white;
 
   @override
   Color get card => throw UnimplementedError();

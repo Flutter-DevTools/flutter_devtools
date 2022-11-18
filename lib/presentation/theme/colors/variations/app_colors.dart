@@ -21,12 +21,11 @@ part 'dark/neutral_color_variations.dart';
 part 'dark/primary_color_variations.dart';
 part 'dark/shimmer_color_variations.dart';
 
-const _darkAppColors = _DarkAppColors();
-const _lightAppColors = _LightAppColors();
-
-const pureColors = _lightAppColors;
+const darkAppColors = _DarkAppColors();
+const lightAppColors = _LightAppColors();
+const pureColors = lightAppColors;
 
 final colors =
     Modular.get<ThemeBloc>().state.selectedThemeMode == ThemeMode.dark
-        ? _darkAppColors
-        : _lightAppColors;
+        ? darkAppColors
+        : lightAppColors;

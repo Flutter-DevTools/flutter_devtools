@@ -4,7 +4,7 @@ class _DarkAppColors extends _LightAppColors {
   const _DarkAppColors();
 
   @override
-  Color get background => throw UnimplementedError();
+  Color get background => Colors.black;
 
   @override
   Color get card => throw UnimplementedError();
