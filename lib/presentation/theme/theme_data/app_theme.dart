@@ -14,11 +14,15 @@ abstract class AppTheme {
     return ThemeData(
       backgroundColor: appColors.background,
       brightness: brightness,
+      drawerTheme: const DrawerThemeData(),
+      appBarTheme: AppBarTheme(
+        elevation: 0,
+        backgroundColor: appColors.neutral.v0,
+      ),
 
       // Buttons
       elevatedButtonTheme: _buildElevatedButtonTheme(appColors: appColors),
       outlinedButtonTheme: _buildOutlinedButtonTheme(appColors: appColors),
-
     );
   }
 }

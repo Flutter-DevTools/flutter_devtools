@@ -1,2 +1,2 @@
-export 'versionnable_hydrated.bloc.dart';
-export 'versionnable_hydrated.cubit.dart';
+export 'versionnable_hydrated_bloc.dart';
+export 'versionnable_hydrated_cubit.dart';

@@ -9,6 +9,7 @@ ElevatedButtonThemeData _buildElevatedButtonTheme({
         pressed: appColors.primary.v100,
         disabled: appColors.neutral.v30,
       ),
+      elevation: 0.mspAll(),
       foregroundColor: pureColors.neutral.v0.mspAll(),
       animationDuration: kThemeAnimationDuration,
       overlayColor: appColors.primary.v60.withOpacity(0.2).mspAll(),
@@ -30,4 +31,3 @@ OutlinedButtonThemeData _buildOutlinedButtonTheme({
     ),
   );
 }
-
