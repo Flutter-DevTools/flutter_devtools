@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_devtools/common/versionnable_bloc/versionnable_hydrated_bloc.dart';
 import 'package:flutter_devtools/presentation/theme/bloc/theme_events.dart';
 import 'package:flutter_devtools/presentation/theme/bloc/theme_state.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
@@ -11,7 +12,7 @@ ThemeMode get deviceBaseThemeMode =>
         ? ThemeMode.dark
         : ThemeMode.light;
 
-class ThemeBloc extends HydratedBloc<ThemeEvents, ThemeState> {
+class ThemeBloc extends VersionnableHydratedBloc<ThemeEvents, ThemeState> {
   ThemeBloc()
       : super(
           ThemeState(selectedThemeMode: deviceBaseThemeMode),
@@ -19,6 +20,10 @@ class ThemeBloc extends HydratedBloc<ThemeEvents, ThemeState> {
     on<ToggleThemeModeEvent>(_toggleThemeMode);
     on<SetThemeModeEvent>(_setThemeMode);
   }
+
+  //---------------------------------------------------------------------------
+  // Events
+  //---------------------------------------------------------------------------
 
   FutureOr<void> _toggleThemeMode(
     ToggleThemeModeEvent _,
@@ -37,6 +42,16 @@ class ThemeBloc extends HydratedBloc<ThemeEvents, ThemeState> {
   ) {
     emit(state.copyWith(selectedThemeMode: event.mode));
   }
+
+  //---------------------------------------------------------------------------
+  // Hydrated Properties
+  //---------------------------------------------------------------------------
+
+  @override
+  int get version => 1;
+
+  @override
+  String get blocId => 'theme_bloc';
 
   @override
   Map<String, dynamic> toJson(ThemeState state) => state.toJson();
