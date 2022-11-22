@@ -39,7 +39,6 @@ local.properties
 ./android/fastlane/report.xml
 ./test-reports/
 # Web related
-lib/generated_plugin_registrant.dart
 
 # Exceptions to above rules.
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages

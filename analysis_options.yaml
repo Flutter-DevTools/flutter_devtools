@@ -6,6 +6,7 @@ analyzer:
 
   exclude:
     - "**/*.g.dart"
+    - "**/*.freezed.dart"
     - "**/*.mocks.dart"
     - "**/injection.config.dart"
     - "lib/injection.config.dart"
