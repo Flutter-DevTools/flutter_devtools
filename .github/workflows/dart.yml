@@ -31,13 +31,13 @@ jobs:
       #  run: flutter gen-l10n
 
       - name: Flutter Lint
-        run: flutter analyze --fatal-warning
+        run: flutter analyze --fatal-warnings
 
       - name: Flutter Test
         run: flutter test --coverage --coverage-path ../coverage/lcov.info
 
       - name: Build Storybook
-        run: flutter build web --web-renderer --base-href "/flutter_devtools/" -t storybook/main_storybook.dart
+        run: flutter build web --web-renderer html --base-href "/flutter_devtools/" -t storybook/main_storybook.dart
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
