@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  lint_test:
-    name: Flutter DevTools
+  build:
+    name: Build and Test
     runs-on: ubuntu-latest
     container:
       image: cirrusci/flutter:latest
@@ -21,11 +21,76 @@ jobs:
     - name: Flutter Generate
       run: flutter pub run build_runner build --delete-conflicting-outputs
       
-    - name: Flutter Generate Translation
-      run: flutter gen-l10n
+    #- name: Flutter Generate Translation
+    #  run: flutter gen-l10n
       
     - name: Flutter Lint
       run: flutter analyze --fatal-warning
     
     - name: Flutter Test
       run: flutter test --coverage --coverage-path ../coverage/lcov.info
+
+    - name: Build release project
+      run: flutter build web
+
+    - name: Upload production-ready build files
+      uses: actions/upload-artifact@v2
+      with:
+        name: production-files
+        path: ./build/web
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '2.0.5'
+
+      - name: Flutter Pub Get
+        run: flutter pub get
+
+      - name: Flutter Generate
+        run: flutter pub run build_runner build --delete-conflicting-outputs
+
+      #- name: Flutter Generate Translation
+      #  run: flutter gen-l10n
+
+      - name: Flutter Lint
+        run: flutter analyze --fatal-warning
+
+      - name: Flutter Test
+        run: flutter test --coverage --coverage-path ../coverage/lcov.info
+
+      - name: Build Storybook
+        run: flutter build web --web-renderer --base-href "/flutter_devtools/" -t storybook/main_storybook.dart
+
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
+        with:
+          name: production-files
+          path: ./build/web
+
+  deploy_storybook:
+    name: Deploy StoryBook
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: production-files
+          path: ./build
+
+      - name: Deploy to Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
