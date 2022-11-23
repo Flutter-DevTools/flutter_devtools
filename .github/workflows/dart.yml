@@ -33,8 +33,8 @@ jobs:
       - name: Flutter Lint
         run: flutter analyze --fatal-warnings
 
-      - name: Flutter Test
-        run: flutter test --coverage --coverage-path ../coverage/lcov.info
+      #- name: Flutter Test
+      #  run: flutter test --coverage --coverage-path ../coverage/lcov.info
 
       - name: Build Storybook
         run: flutter build web --web-renderer html --base-href "/flutter_devtools/" -t storybook/main_storybook.dart
