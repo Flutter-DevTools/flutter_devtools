@@ -32,6 +32,24 @@ Go to project root and execute the install_project.sh bash script to install som
 ./install_project.sh
 ```
 
+## Flutter StoryBook:
+**Step 1:**
+
+Download or clone this repo by using the link below:
+
+```
+https://github.com/Flutter-DevTools/flutter_devtools.git
+```
+
+**Step 2:**
+
+To launch the storybook, execute:
+
+```
+flutter run --web-renderer html -t ./storybook/main_storybook.dart
+```
+
+
 ## Flutter Devtools Features:
 
 * Feature 1
