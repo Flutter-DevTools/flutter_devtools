@@ -37,7 +37,7 @@ jobs:
       #  run: flutter test --coverage --coverage-path ../coverage/lcov.info
 
       - name: Build Storybook
-        run: flutter build web --web-renderer html --base-href "/flutter_devtools/" #-t storybook/main_storybook.dart
+        run: flutter build web --web-renderer html --base-href "/flutter_devtools/" -t storybook/main_storybook.dart
 
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
