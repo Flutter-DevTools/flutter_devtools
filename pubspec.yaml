@@ -9,7 +9,6 @@ environment:
   sdk: ">=2.18.2 <3.0.0"
 
 dependencies:
-
   ### Google Dependencies ###
 
   ### Core ###
@@ -22,8 +21,12 @@ dependencies:
   ### Network ###
 
   ### Design ###
+  # Icons
+  iconsax: ^0.0.8
+  ionicons: ^0.2.1
 
   ### Utils ###
+  collection: ^1.16.0
   path_provider: ^2.0.11
   freezed_annotation: ^2.2.0
   json_annotation: ^4.7.0

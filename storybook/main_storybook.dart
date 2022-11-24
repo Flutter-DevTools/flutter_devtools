@@ -4,7 +4,7 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart' as path_provider;
 import 'package:flutter_web_plugins/url_strategy.dart';
 
-import 'app_storybook.dart';
+import 'lib/app_storybook.dart';
 
 void main() async {
   usePathUrlStrategy();
