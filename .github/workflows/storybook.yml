@@ -35,4 +35,4 @@ jobs:
           targetBranch: gh-pages
           webRenderer: html
           baseHref: /flutter_devtools/
-          workingDir: storybook
+          customArgs: -t storybook/main.dart
