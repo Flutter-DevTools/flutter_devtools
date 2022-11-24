@@ -1,15 +1,14 @@
-name: CI
+name: Deploy Storybook
 
-on: 
-  pull_request:
-    branches: 
+on:
+  push:
+    branches:
       - develop
-      - release
   workflow_dispatch:
 
 jobs:
-  build:
-    name: Build and Test
+  build_and_deploy:
+    name: Build and Deploy Storybook
     runs-on: ubuntu-latest
 
     steps:
@@ -30,8 +29,9 @@ jobs:
       #- name: Flutter Generate Translation
       #  run: flutter gen-l10n
 
-      - name: Flutter Lint
-        run: flutter analyze --fatal-warnings
-
-      #- name: Flutter Test
-      #  run: flutter test --coverage --coverage-path ../coverage/lcov.info
+      - name: Deploy Storybook
+        uses: bluefireteam/flutter-gh-pages@v7
+        with:
+          targetBranch: gh-pages
+          webRenderer: html
+          baseHref: /flutter_devtools/
