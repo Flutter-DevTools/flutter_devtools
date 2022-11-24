@@ -149,7 +149,7 @@ packages:
     source: hosted
     version: "4.3.0"
   collection:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: collection
       url: "https://pub.dartlang.org"
@@ -352,6 +352,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "9.0.0"
+  iconsax:
+    dependency: "direct main"
+    description:
+      name: iconsax
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.8"
   io:
     dependency: transitive
     description:
@@ -359,6 +366,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
+  ionicons:
+    dependency: "direct main"
+    description:
+      name: ionicons
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.1"
   js:
     dependency: transitive
     description:

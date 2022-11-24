@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 
+import 'presentation/icons/ionicons_story.dart';
+
 class AppStorybook extends StatelessWidget {
   const AppStorybook();
 
@@ -28,6 +30,7 @@ class AppStorybook extends StatelessWidget {
             ),
           ),
         ),
+        IoniconsStory(),
       ],
     );
   }
