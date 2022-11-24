@@ -22,7 +22,6 @@ dependencies:
 
   ### Design ###
   # Icons
-  iconsax: ^0.0.8
   ionicons: ^0.2.1
 
   ### Utils ###
