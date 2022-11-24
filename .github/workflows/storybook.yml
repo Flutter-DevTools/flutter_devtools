@@ -33,5 +33,6 @@ jobs:
         uses: bluefireteam/flutter-gh-pages@v7
         with:
           targetBranch: gh-pages
+          webRenderer: html
           baseHref: /flutter_devtools/
           customArgs: -t storybook/main.dart
