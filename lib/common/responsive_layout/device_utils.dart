@@ -13,7 +13,7 @@ enum DeviceType { android, ios, fuchsia, web, windows, mac, linux }
 /// This can either be mobile or tablet
 enum ScreenType { mobile, tablet, desktop }
 
-class CurrentDevice {
+abstract class CurrentDevice {
   /// Device's BoxConstraints
   static late BoxConstraints boxConstraints;
 
@@ -40,12 +40,12 @@ class CurrentDevice {
 
   /// Sets the Screen's size and Device's `Orientation`,
   /// `BoxConstraints`, `Height`, and `Width`
-  static void setScreenSize(
-    BoxConstraints constraints,
-    Orientation currentOrientation,
-    double maxMobileWidth, [
+  static void setScreenSize({
+    required BoxConstraints constraints,
+    required Orientation currentOrientation,
+    required double maxMobileWidth,
     double? maxTabletWidth,
-  ]) {
+  }) {
     // Sets boxconstraints and orientation
     boxConstraints = constraints;
     orientation = currentOrientation;
@@ -95,5 +95,52 @@ class CurrentDevice {
     } else {
       screenType = ScreenType.desktop;
     }
+  }
+
+  static Widget map({
+    required Widget Function() sm,
+    required Widget Function() md,
+    required Widget Function() lg,
+    required Widget Function() xl,
+    required Widget Function() xl2,
+  }) {
+    if (width < 640) {
+      return sm();
+    }
+    if (width < 768) {
+      return md();
+    }
+    if (width < 1024) {
+      return lg();
+    }
+    if (width < 1280) {
+      return xl();
+    }
+    // width < 1536
+    return xl2();
+  }
+
+  static Widget maybeMap({
+    required Widget Function() orElse,
+    Widget Function()? sm,
+    Widget Function()? md,
+    Widget Function()? lg,
+    Widget Function()? xl,
+    Widget Function()? xl2,
+  }) {
+    if (width < 640) {
+      return sm != null ? sm() : orElse();
+    }
+    if (width < 768) {
+      return md != null ? md() : orElse();
+    }
+    if (width < 1024) {
+      return lg != null ? lg() : orElse();
+    }
+    if (width < 1280) {
+      return xl != null ? xl() : orElse();
+    }
+    // width < 1536
+    return xl2 != null ? xl2() : orElse();
   }
 }
