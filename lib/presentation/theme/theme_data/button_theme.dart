@@ -5,15 +5,18 @@ ElevatedButtonThemeData _buildElevatedButtonTheme({
 }) {
   return ElevatedButtonThemeData(
     style: ButtonStyle(
-      backgroundColor: appColors.primary.v100.materialPropertyBuilder(
-        pressed: appColors.primary.v100,
-        disabled: appColors.neutral.v30,
-      ),
-      elevation: 0.mspAll(),
-      foregroundColor: pureColors.neutral.v0.mspAll(),
-      animationDuration: kThemeAnimationDuration,
-      overlayColor: appColors.primary.v60.withOpacity(0.2).mspAll(),
-    ),
+        backgroundColor: appColors.primary.v100.materialPropertyBuilder(
+          disabled: appColors.neutral.v40,
+        ),
+        elevation: (0.0).mspAll(),
+        padding: const EdgeInsets.symmetric(
+          vertical: Dimens.spacing16,
+          horizontal: Dimens.spacing24,
+        ).mspAll(),
+        foregroundColor: pureColors.neutral.v0.mspAll(),
+        animationDuration: kThemeAnimationDuration,
+        overlayColor: appColors.primary.v120.mspAll(),
+        shape: RoundedRectangleBorder(borderRadius: Dimens.borderRadius8).mspAll()),
   );
 }
 

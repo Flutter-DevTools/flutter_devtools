@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
-import 'package:storybook_flutter/storybook_flutter.dart';
 
-class IoniconsStory extends Story {
-  const IoniconsStory._({
+import '../../scaffold_story.dart';
+
+class IoniconsStory extends ScaffoldStory {
+  IoniconsStory._({
     required super.name,
-    required super.builder,
+    required super.body,
   });
 
   factory IoniconsStory() {
-    final List<IconData> allIoniconsDataStub = ioniconsMapping.values
-        .map((code) => IoniconsData(int.parse(code)))
-        .toList();
+    final List<IconData> allIoniconsDataStub =
+        ioniconsMapping.values.map((code) => IoniconsData(int.parse(code))).toList();
 
     return IoniconsStory._(
-      name: 'Ionicons',
-      builder: (context) => Padding(
+      name: 'Components/Ionicons',
+      body: (context) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: GridView.builder(
           itemCount: allIoniconsDataStub.length,
