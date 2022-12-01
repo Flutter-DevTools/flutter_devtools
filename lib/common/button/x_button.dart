@@ -19,13 +19,7 @@ class XButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: state.isDisabled
-          ? null
-          : () {
-              if (!state.isLoading) {
-                onPressed();
-              }
-            },
+      onPressed: _onPressed,
       child: Stack(
         alignment: Alignment.center,
         children: [
@@ -44,5 +38,16 @@ class XButton extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  VoidCallback? get _onPressed {
+    switch (state) {
+      case XButtonState.ENABLED:
+        return onPressed;
+      case XButtonState.DISABLED:
+        return null;
+      case XButtonState.LOADING:
+        return () => {};
+    }
   }
 }

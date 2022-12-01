@@ -15,7 +15,8 @@ class XCircularProgressIndicator extends StatelessWidget {
     return SizedBox(
       height: size,
       width: size,
-      child: CircularProgressIndicator.adaptive(
+      child: CircularProgressIndicator(
+        key: const ValueKey('CircularProgressIndicatorButton'),
         strokeWidth: 1,
         valueColor: AlwaysStoppedAnimation<Color>(color ?? colors.primary.v100),
       ),
