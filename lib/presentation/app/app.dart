@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_devtools/common/responsive_layout/responsive_app.dart';
 import 'package:flutter_devtools/presentation/app/app_module.dart';
 import 'package:flutter_devtools/presentation/theme/bloc/theme_bloc.dart';
-import 'package:flutter_devtools/presentation/theme/bloc/theme_state.dart';
 import 'package:flutter_devtools/presentation/theme/colors/variations/app_colors.dart';
 import 'package:flutter_devtools/presentation/theme/theme_data/app_theme.dart';
 import 'package:flutter_modular/flutter_modular.dart';

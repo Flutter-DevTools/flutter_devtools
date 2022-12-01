@@ -9,7 +9,7 @@ void main() async {
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
         ? HydratedStorage.webStorageDirectory
-        : await path_provider.getApplicationDocumentsDirectory(),
+        : await path_provider.getTemporaryDirectory(),
   );
   runApp(const App());
 }
