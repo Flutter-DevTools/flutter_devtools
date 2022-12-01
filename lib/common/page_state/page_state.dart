@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+
 part 'page_state.freezed.dart';
 
 typedef SimplePageState<T> = PageState<T, void, void, void, dynamic>;
