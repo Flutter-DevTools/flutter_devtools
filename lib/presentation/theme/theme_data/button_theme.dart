@@ -10,13 +10,13 @@ ElevatedButtonThemeData _buildElevatedButtonTheme({
       ),
       elevation: (0.0).mspAll(),
       padding: const EdgeInsets.symmetric(
-        vertical: Dimens.spacing16,
+        vertical: Dimens.spacing20,
         horizontal: Dimens.spacing24,
       ).mspAll(),
       foregroundColor: pureColors.neutral.v0.mspAll(),
       animationDuration: kThemeAnimationDuration,
       overlayColor: appColors.primary.v120.mspAll(),
-        shape: RoundedRectangleBorder(borderRadius: Dimens.borderRadius8).mspAll()),
+      shape: RoundedRectangleBorder(borderRadius: Dimens.borderRadius8).mspAll(),
     ),
   );
 }

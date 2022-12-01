@@ -30,18 +30,6 @@ class AppStorybook extends StatelessWidget {
       },
       stories: [
         ResponsiveAppStory(),
-        Story(
-          name: 'Widgets/Text',
-          description: 'Simple text widget.',
-          builder: (context) => Center(
-            child: Text(
-              context.knobs.text(
-                label: 'Content',
-                initial: 'My Text',
-              ),
-            ),
-          ),
-        ),
         IoniconsStory(),
         ButtonStory(),
       ],

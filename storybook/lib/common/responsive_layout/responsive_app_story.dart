@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_devtools/common/responsive_layout/device_utils.dart';
 import 'package:flutter_devtools/common/responsive_layout/responsive_app.dart';
-import 'package:storybook_flutter/storybook_flutter.dart';
 
-class ResponsiveAppStory extends Story {
+import '../../scaffold_story.dart';
+
+class ResponsiveAppStory extends ScaffoldStory {
   ResponsiveAppStory()
       : super(
           name: 'Responsive App',
-          builder: (context) {
+          body: (context) {
             return ResponsiveApp(
               builder: (
                 context,
