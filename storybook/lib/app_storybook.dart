@@ -6,6 +6,8 @@ import 'package:storybook_flutter/storybook_flutter.dart';
 import 'presentation/icons/ionicons_story.dart';
 import 'presentation/theme/button_story.dart';
 
+import 'common/responsive_layout/responsive_app_story.dart';
+
 class AppStorybook extends StatelessWidget {
   const AppStorybook();
 
@@ -28,6 +30,19 @@ class AppStorybook extends StatelessWidget {
         );
       },
       stories: [
+        ResponsiveAppStory(),
+        Story(
+          name: 'Widgets/Text',
+          description: 'Simple text widget.',
+          builder: (context) => Center(
+            child: Text(
+              context.knobs.text(
+                label: 'Content',
+                initial: 'My Text',
+              ),
+            ),
+          ),
+        ),
         IoniconsStory(),
         ButtonStory(),
       ],

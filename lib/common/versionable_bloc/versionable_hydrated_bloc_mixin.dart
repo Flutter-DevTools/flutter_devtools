@@ -1,6 +1,6 @@
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 
-mixin VersionnableHydratedBlocMixin<T> on HydratedMixin<T> {
+mixin VersionableHydratedBlocMixin<T> on HydratedMixin<T> {
   static const _storageKey = 'all_bloc_version';
 
   /// The version of the bloc represent the version of the state data model

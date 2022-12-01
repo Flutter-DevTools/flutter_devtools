@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter_devtools/common/versionnable_bloc/versionnable_hydrated_bloc.dart';
+import 'package:flutter_devtools/common/versionable_bloc/versionable_hydrated_bloc.dart';
 import 'package:flutter_devtools/presentation/theme/bloc/theme_events.dart';
 import 'package:flutter_devtools/presentation/theme/bloc/theme_state.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
@@ -12,7 +12,7 @@ ThemeMode get deviceBaseThemeMode =>
         ? ThemeMode.dark
         : ThemeMode.light;
 
-class ThemeBloc extends VersionnableHydratedBloc<ThemeEvents, ThemeState> {
+class ThemeBloc extends VersionableHydratedBloc<ThemeEvents, ThemeState> {
   ThemeBloc()
       : super(
           ThemeState(selectedThemeMode: deviceBaseThemeMode),
