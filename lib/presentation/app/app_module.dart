@@ -4,7 +4,9 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:modular_bloc_bind/modular_bloc_bind.dart';
 
 class AppModule extends Module {
-  AppModule({required this.themeBloc});
+  AppModule({
+    required this.themeBloc,
+  });
 
   final ThemeBloc themeBloc;
   @override
