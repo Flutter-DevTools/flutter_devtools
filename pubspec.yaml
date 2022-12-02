@@ -31,10 +31,16 @@ dependencies:
   json_annotation: ^4.7.0
   storybook_flutter: ^0.11.3
 
+
   flutter:
     sdk: flutter
+  # Web
   flutter_web_plugins:
     sdk: flutter
+  # Translation
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.17.0
 
 dev_dependencies:
   flutter_test:
@@ -49,3 +55,4 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  generate: true

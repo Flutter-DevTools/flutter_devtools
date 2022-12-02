@@ -7,9 +7,7 @@ import 'package:path_provider/path_provider.dart' as path_provider;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   HydratedBloc.storage = await HydratedStorage.build(
-    storageDirectory: kIsWeb
-        ? HydratedStorage.webStorageDirectory
-        : await path_provider.getTemporaryDirectory(),
+    storageDirectory: kIsWeb ? HydratedStorage.webStorageDirectory : await path_provider.getTemporaryDirectory(),
   );
   runApp(const App());
 }

@@ -27,11 +27,11 @@ jobs:
       - name: Flutter Generate
         run: flutter pub run build_runner build --delete-conflicting-outputs
 
-      #- name: Flutter Generate Translation
-      #  run: flutter gen-l10n
+      - name: Flutter Generate Translation
+        run: flutter gen-l10n
 
       - name: Flutter Lint
         run: flutter analyze --fatal-warnings
 
-      #- name: Flutter Test
-      #  run: flutter test --coverage --coverage-path ../coverage/lcov.info
+      - name: Flutter Test
+        run: flutter test --coverage --coverage-path ../coverage/lcov.info
